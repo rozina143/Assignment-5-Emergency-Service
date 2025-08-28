@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Emergency Service</title>
+    <!-- daisy ui cdn -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind css -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <!-- font awsome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <section class="container mx-auto ">
+        <nav class="flex justify-between items-center py-4 " > 
+            <div  class="nav-left  flex justify-center items-center gap-2">
+                <img src="assets/logo-dark.png" alt="" class="w-12">
+                <p class="font-bold text-[#006747] ">Emergency <br> Service</p>
+            </div>
+
+            <div class="nav-right  flex justify-center items-center gap-5 ">
+                <div class="min-h-12 w-28 flex justify-center items-center gap-2 bg-[#41ff6b1a] rounded-[20px] ">
+                <span>0</span>
+                <img src="assets/heart.png" alt="" class="w-8">
+            </div>
+                <div class="min-h-12 w-28 flex justify-center items-center gap-2 bg-[#41ff6b1a] rounded-[20px]">
+                <span>100</span>
+                <img src="assets/coin.png" alt="" class="w-8">
+            </div>
+               <div class="min-h-12 w-28 flex justify-center items-center gap-2 bg-[#00a63e] rounded-[20px]">
+                <span>2</span>
+                <p>Copy</p>
+            </div>
+            </div>
+        </nav>
+    </section>
+
+
+
+
+
+    <script src="event.js"></script>
 </body>
 </html>
