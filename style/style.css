@@ -12,10 +12,12 @@
     }
     .left-side{
         grid-template-columns: repeat(1,1fr);
+
     }
     .right-side{
         margin-top: 20px;
     }
+   
 }
 @media screen and (min-width:766px) and (max-width:976px){
     nav{
@@ -32,9 +34,7 @@
         flex-direction: column;
        justify-content: center;
 }
-.img{
-    gap:50px
-}
+
  .right-side{
         margin-top: 20px;
       
