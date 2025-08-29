@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Service</title>
+    <link rel="stylesheet" href="style/style.css">
     <!-- daisy ui cdn -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind css -->
@@ -23,15 +24,15 @@
 
             <div class="nav-right  flex justify-center items-center gap-5 ">
                 <div class="min-h-12 w-28 flex justify-center items-center gap-2 bg-[#41ff6b1a] rounded-[20px] ">
-                <span>0</span>
+                <span id="heart-count">0</span>
                 <img src="assets/heart.png" alt="" class="w-8">
             </div>
                 <div class="min-h-12 w-28 flex justify-center items-center gap-2 bg-[#41ff6b1a] rounded-[20px]">
-                <span>100</span>
+                <span id="coin-count">100</span>
                 <img src="assets/coin.png" alt="" class="w-8">
             </div>
                <div class="min-h-12 w-28 flex justify-center items-center gap-2 bg-[#00a63e] rounded-[20px]">
-                <span>2</span>
+                <span id="copy-count">2</span>
                 <p>Copy</p>
             </div>
             </div>
@@ -53,212 +54,225 @@
        </div>
     </section>
 
+    <!-- card section -->
 <section class="border-2 bg-[#41ff6b1a] min-h-[900px]">
-<div class="border-4 border-blue-700 mt-6 container mx-auto flex gap-8">
-
-    <div class="left-side grid grid-cols-3 gap-8">
+<div class="nav-service mt-6 container  mx-auto  flex justify-between ">
+   <div class="left-side grid grid-cols-3 gap-10">
 <!-- 1 -->
-<div class="card bg-white text-neutral-content ">
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
         <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
+    <h2 id="service-name-1" class="card-title text-black">National Emergency Number</h2>
     <p class="text-[#5c5c5c]">National Emergency</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
+        <h2 id="helpLine-1" class="card-title text-black">999</h2>
     <p class="text-[#5c5c5c]">All</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('1')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
-   <!-- 2 -->
-<div class="card bg-white text-neutral-content ">
-  <div class=" card-body mx-auto  ">
+<!-- 2 -->
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
+  <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
-        <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
+        <img src="assets/police.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-2" class="card-title text-black">Police Helpline Number</h2>
+    <p class="text-[#5c5c5c]">Police</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-2" class="card-title text-black">999</h2>
+    <p class="text-[#5c5c5c]">Police</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('2')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
 <!-- 3 -->
-<div class="card bg-white text-neutral-content ">
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
-        <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
+        <img src="assets/fire-service.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-3" class="card-title text-black">Fire Service Number</h2>
+    <p class="text-[#5c5c5c]">Fire Service</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-3" class="card-title text-black">999</h2>
+    <p class="text-[#5c5c5c]">Fire</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('3')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
 <!-- 4 -->
-<div class="card bg-white text-neutral-content ">
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
-        <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
+        <img src="assets/ambulance.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-4" class="card-title text-black">Ambulance Service</h2>
+    <p class="text-[#5c5c5c]">Ambulance</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-4" class="card-title text-black">1994-999999</h2>
+    <p class="text-[#5c5c5c]">Health</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('4')" > <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
 <!-- 5 -->
-<div class="card bg-white text-neutral-content ">
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
         <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-5" class="card-title text-black">Women & Child Helpline</h2>
+    <p class="text-[#5c5c5c]">Women & Child Helpline</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-5" class="card-title text-black">109</h2>
+    <p class="text-[#5c5c5c]">Help</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()"  class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('5')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
-<!--6  -->
-<div class="card bg-white text-neutral-content ">
+<!-- 6 -->
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
         <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-6" class="card-title text-black">Anti-Corruption Helpline</h2>
+    <p class="text-[#5c5c5c]">Anti-Corruption</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-6" class="card-title text-black">999</h2>
+    <p class="text-[#5c5c5c]">106</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('6')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
 <!-- 7 -->
-<div class="card bg-white text-neutral-content ">
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
         <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-7" class="card-title text-black">Electricity Helpline</h2>
+    <p class="text-[#5c5c5c]">Electricity Helpline</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-7" class="card-title text-black">16216</h2>
+    <p class="text-[#5c5c5c]">Electricity</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('7')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
 <!-- 8 -->
-<div class="card bg-white text-neutral-content ">
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
   <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
         <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c]" ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-8" class="card-title text-black">Brac Helpline</h2>
+    <p class="text-[#5c5c5c]">Brac</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-8" class="card-title text-black">16445</h2>
+    <p class="text-[#5c5c5c]">NGO</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin('8')"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
-<!-- 9 -->
-<div class="card bg-white text-neutral-content ">
-  <div class="card-body ">
+<!--9-->
+<div class="card bg-white text-neutral-content shadow-md max-w[500px]">
+  <div class="card-body mx-auto ">
     <div class="img flex gap-56">
        <div class="bg-pink-300 w-[40px] h-[40pxs] rounded"> 
         <img src="assets/emergency.png" alt="" class="h-[34px] w-[34px] p-2 mx-auto">
     </div>
-        <span><i class="fa-solid fa-heart"></i></span>
+        <span  onclick="increaseHeart()"><i class="fa-solid fa-heart text-[#5c5c5c] " ></i></span>
     </div>
-    <h2 class="card-title text-black">National Emergency Number</h2>
-    <p class="text-[#5c5c5c]">National Emergency</p>
+    <h2 id="service-name-9" class="card-title text-black" >Bangladesh Railway Helpline </h2>
+    <p class="text-[#5c5c5c]">Bangladesh Railway</p>
     <div>
-        <h2 class="card-title text-black">999</h2>
-    <p class="text-[#5c5c5c]">All</p>
+        <h2 id="helpLine-9" class="card-title text-black" >163</h2>
+    <p class="text-[#5c5c5c]">Travel</p>
     </div>
     <div class="card-actions ">
-      <button class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
-      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]"> <i class="fa-solid fa-phone"></i>Call</button>
+      <button  onclick="increaseCopy()" class="btn btn-#ffffff px-11 text-[#5c5c5c]"><i class="fa-regular fa-copy"></i> Copy</button>
+      <button class="btn bg-[#00a63e] px-11 text-[#ebe8e8]" onclick="decreaseCoin(9)"> <i class="fa-solid fa-phone"></i>Call</button>
     </div>
   </div>
 </div>
 
-</div>
-
-    <div class="right-side border-2 border-red-800 w-[400px] h-[700px]">
-<div>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus sint, atque saepe provident porro asperiores ipsum? Quisquam recusandae nihil neque, magnam, saepe quas ducimus, vitae eligendi quod dolor dignissimos provident!</p>
-</div>
-<div>
 
 </div>
+
+ 
+<!-- list -->
+    <div class="right-side   bg-white w-[400px] h-[840px] rounded-lg">
+<!-- history -->
+ <div class="history flex justify-between items-center p-4">
+    <div class="flex justify-center items-center gap-3">
+<i class="fa-solid fa-clock"></i>
+<p class="text-black text-xl " >Call History</p>
     </div>
+<button class="btn bg-[#00a63e] px-8 py-6 text-[#ebe8e8] rounded-[30px]" onclick="clearHistory()">Clear</button>
+ </div>
+ <!-- call list -->
+  <div class="p-4" id="callHistory" >
+   
+  </div>
+  
 </div>
 
+
+</div>
+
+</div>
 </section>
 
 
