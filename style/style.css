@@ -19,7 +19,7 @@
     }
    
 }
-@media screen and (min-width:766px) and (max-width:976px){
+@media screen and (min-width:766px) and (max-width:996px){
     nav{
         flex-direction: column;
         
@@ -27,9 +27,7 @@
       nav .nav-right{
         margin-top: 20px;
     }
-    nav .nav-right{
-        margin-top: 20px;
-    }
+   
       .nav-service{
         flex-direction: column;
        justify-content: center;
